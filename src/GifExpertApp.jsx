@@ -3,7 +3,7 @@ import { AddCategory } from './components/AddCategory'
 import { GifGrid } from './components/GifGrid'
 
 export default function GifExpertApp() {
-  const [categories, setCategories] = useState(['Demon Slayer'])
+  const [categories, setCategories] = useState([])
 
   const onAddCategory = (newCategory) => {
     if (categories.includes(newCategory)) return
