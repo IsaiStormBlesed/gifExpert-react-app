@@ -4,7 +4,8 @@ export function AddCategory({ onAddCategory }) {
   const [inputValue, setInputValue] = useState('')
 
   const handleChange = (e) => {
-    setInputValue(e.target.value)
+    const str = e.target.value
+    setInputValue(str.toUpperCase())
   }
 
   const handleSubmit = (e) => {
