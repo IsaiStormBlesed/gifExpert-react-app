@@ -4,17 +4,17 @@ import { AddCategory } from './components/AddCategory'
 export default function GifExpertApp() {
   const [categories, setCategories] = useState(['One Punch', 'Demon Slayer'])
 
-  const handleClick = () => {
-    setCategories([...categories, 'Tokyo Ghoul'])
+  const onAddCategory = (newCategory) => {
+    if (categories.includes(newCategory)) return
+    setCategories([newCategory, ...categories])
   }
 
   return (
     <>
       <h1>Gif Expert App</h1>
-      <AddCategory setCategories={setCategories} categories={categories} />
-      <button onClick={handleClick}>Add Category</button>
-      {categories.map((item, idx) => (
-        <li key={idx}>{item}</li>
+      <AddCategory onAddCategory={onAddCategory} />
+      {categories.map((item) => (
+        <li key={item}>{item}</li>
       ))}
     </>
   )
